@@ -4,6 +4,7 @@ import argparse
 import hashlib
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 
@@ -37,13 +38,20 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
+def tracked_files() -> list[Path]:
+    completed = subprocess.run(
+        ["git", "-C", str(ROOT), "ls-files", "-z"],
+        check=True,
+        capture_output=True,
+    )
+    return [ROOT / name for name in completed.stdout.decode("utf-8").split("\0") if name]
+
+
 def validate_files() -> None:
     for relative in REQUIRED:
         if not (ROOT / relative).is_file():
             fail(f"缺少文件：{relative}")
-    for path in ROOT.rglob("*"):
-        if ".git" in path.parts:
-            continue
+    for path in tracked_files():
         if path.name in FORBIDDEN_NAMES or path.suffix in {".pyc", ".ipynb"}:
             fail(f"发现不应发布的路径：{path.relative_to(ROOT)}")
 
@@ -69,8 +77,8 @@ def validate_sample() -> None:
 
 
 def validate_text_safety() -> None:
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts or path.suffix.lower() in {".exe", ".png"}:
+    for path in tracked_files():
+        if not path.is_file() or path.suffix.lower() in {".exe", ".png"}:
             continue
         if path.resolve() == Path(__file__).resolve():
             continue
