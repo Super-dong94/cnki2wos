@@ -1,0 +1,28 @@
+RT Journal Article
+SR 张三. 一个虚构的文献计量示例
+A1 张三;李四
+AD 示例大学信息中心
+T1 一个虚构的文献计量示例
+JF 示例学报
+YR 2025
+IS 2
+vo 10
+OP 12-18
+K1 文献计量;数据转换
+AB 这是仅用于软件测试的虚构摘要。
+这是摘要的第二行。
+SN 0000-0000
+DS CNKI
+DO https://doi.org/10.0000/cnki2wos.sample
+LK https://example.invalid/article/1
+LA chi
+
+RT Journal Article
+SR 无名氏. 第二条虚构记录
+T1 第二条虚构记录
+JF 示例期刊
+YR 2024
+OP S1-S5
+K1 示例
+AB 本记录同样不对应真实论文。
+DS CNKI

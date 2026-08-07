@@ -1,0 +1,40 @@
+FN CNKI2WOS
+VR 1.0
+
+PT J
+AU 张三
+   李四
+AF 张三
+   李四
+TI 一个虚构的文献计量示例
+SO 示例学报
+LA Chinese
+DT Article
+DE 文献计量; 数据转换
+AB 这是仅用于软件测试的虚构摘要。 这是摘要的第二行。
+C1 示例大学信息中心
+SN 0000-0000
+DI 10.0000/cnki2wos.sample
+UR https://example.invalid/article/1
+PY 2025
+VL 10
+IS 2
+BP 12
+EP 18
+PG 7
+UT CNKI:0856ca2ef32b2711bd4ec5c20a6d395f
+ER
+
+PT J
+TI 第二条虚构记录
+SO 示例期刊
+DT Article
+DE 示例
+AB 本记录同样不对应真实论文。
+PY 2024
+BP S1
+EP S5
+UT CNKI:c7691023cc99c5c2e6851bc654e24b4a
+ER
+
+EF

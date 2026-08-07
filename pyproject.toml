@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cnki2wos"
+version = "1.0.0"
+description = "Convert CNKI RefWorks text to WOS-style tagged text"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Super-dong94" }]
+keywords = ["CNKI", "Web of Science", "bibliometrics", "scientometrics"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Operating System :: Microsoft :: Windows",
+]
+
+[project.gui-scripts]
+cnki2wos = "cnki2wos.gui:main"
+
+[tool.setuptools]
+packages = ["cnki2wos"]
